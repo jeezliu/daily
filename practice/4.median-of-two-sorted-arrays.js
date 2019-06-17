@@ -18,8 +18,8 @@ var findMedianSortedArrays = function(nums1, nums2) {
 function kth(nums1, nums2, k) {
   if(nums1.length === 0) return nums2[k];
   if(nums2.length === 0) return nums1[k];
-  [idx1, idx2] = [Math.floor(nums1.length / 2), Math.floor(nums2.length / 2)];
-  [md1, md2] = [nums1[idx1], nums2[idx2]];
+  var [idx1, idx2] = [Math.floor(nums1.length / 2), Math.floor(nums2.length / 2)];
+  var [md1, md2] = [nums1[idx1], nums2[idx2]];
   if(idx1 + idx2 < k) {
     if(md1 < md2) return kth(nums1.slice(idx1 + 1), nums2, k - idx1 - 1 );
     return kth(nums1, nums2.slice(idx2 + 1), k - idx2 - 1);
